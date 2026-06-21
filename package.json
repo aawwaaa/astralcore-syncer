@@ -40,5 +40,18 @@
     "@types/node": "^26.0.0",
     "@types/ws": "^8.18.1",
     "ws": "^8.21.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "LICENSE_types_node",
+    "LICENSE_types_ws",
+    "LICENSE_ws",
+    "LICENSE_typescript",
+    "NOTICE_typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }

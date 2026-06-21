@@ -120,6 +120,7 @@ export abstract class BaseResource<Data, Events extends BaseResourceEvent> {
   resSync() {
     if (env().remote.isClient()) return;
     env().remote.rpcEmit(this, "$sync", typedValuePackData(this.resSave(true)))
+    this.event.emit("sync") // local emit for server-side listeners
   }
 
   // method -> RpcManager

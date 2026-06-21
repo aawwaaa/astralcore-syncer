@@ -174,6 +174,7 @@ Connection ${this.id}
   }
 
   async handleResourceRequest(ref: ResourceRef, send: boolean = true) {
+    // FIXME: error handling
     if (ref && ref.length != 1) {
       console.error("Got an unexpected resource request: ", ref)
       return

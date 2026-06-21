@@ -19,8 +19,8 @@
 
 ### 代码示例
 
-```ts
-// shared.ts
+```js
+// shared.js
 import { Resource } from "@aawwaaa/astralcore-syncer";
 
 export class SharedDoc extends Resource {
@@ -32,10 +32,10 @@ export class SharedDoc extends Resource {
 
 export const SharedDocDef = Resource.define(SharedDoc, "shared-doc").invoke("modify");
 ```
-```ts
-// server.ts
+```js
+// server.js
 import { ResourceEnvironment, resourceEnvironmentSetImpl } from "@aawwaaa/astralcore-syncer";
-import { ServerMemoryResourceManager } from "@aawwaaa/astralcore-syncer/impl/server";
+import { ServerMemoryResourceManager } from "@aawwaaa/astralcore-syncer/impl/server/resource-memory";
 import { ServerWebsocketRemoteManager } from "@aawwaaa/astralcore-syncer/impl/server/remote-websocket";
 import express from "express";
 import expressWs from "express-ws";
@@ -54,15 +54,16 @@ const { app } = expressWs(express());
 app.ws("/ws", (ws) => remote.handleWebSocket(ws));
 app.listen(8000, () => console.log("Server on :8000"));
 ```
-```ts
-// client.ts
+```js
+// client.js
 import { ResourceEnvironment, resourceEnvironmentSetImpl } from "@aawwaaa/astralcore-syncer";
-import { ClientWebsocketRemoteManager } from "@aawwaaa/astralcore-syncer/impl/client";
-import { ClientRemoteResourceManager } from "@aawwaaa/astralcore-syncer/impl/client";
+import { ClientWebsocketRemoteManager } from "@aawwaaa/astralcore-syncer/impl/client/remote-websocket";
+import { ClientRemoteResourceManager } from "@aawwaaa/astralcore-syncer/impl/client/resource-remote";
 import { SharedDocDef } from "./shared";
 
 const remote = new ClientWebsocketRemoteManager("/ws").init();
-resourceEnvironmentSetImpl(() => new ResourceEnvironment(remote, new ClientRemoteResourceManager(remote)));
+const impl = new ResourceEnvironment(remote, new ClientRemoteResourceManager(remote));
+resourceEnvironmentSetImpl(() => impl);
 
 using doc = await SharedDocDef.resolve("main");
 const textarea = document.getElementById("edit");

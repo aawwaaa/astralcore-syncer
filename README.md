@@ -8,6 +8,7 @@
 [![npm version](https://img.shields.io/npm/v/@aawwaaa/astralcore-syncer?style=flat-square)](https://www.npmjs.com/package/@aawwaaa/astralcore-syncer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=flat-square)](https://www.typescriptlang.org/)
+[![Demo](https://img.shields.io/badge/demo-in_stackblitz-green?style=flat-square)](https://stackblitz.com/edit/astralcore-syncer-demo1?file=index.js)
 
 ---
 

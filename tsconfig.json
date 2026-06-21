@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "es6",
+    // "moduleResolution": "nodenext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "strict": true,
+    "lib": ["ES2024", "ESNext.Disposable"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./dist"]
+}

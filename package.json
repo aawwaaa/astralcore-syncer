@@ -1,0 +1,44 @@
+{
+  "name": "@aawwaaa/astralcore-syncer",
+  "version": "1.0.0",
+  "description": "A lightweight library to connect objects together",
+  "scripts": {
+    "build": "tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./impl/client/remote-websocket": {
+      "types": "./src/impl/client/remote-websocket.ts",
+      "default": "./dist/impl/client/remote-websocket.js"
+    },
+    "./impl/client/resource-remote": {
+      "types": "./src/impl/client/resource-remote.ts",
+      "default": "./dist/impl/client/resource-remote.js"
+    },
+    "./impl/server/remote-websocket": {
+      "types": "./src/impl/server/remote-websocket.ts",
+      "default": "./dist/impl/server/remote-websocket.js"
+    },
+    "./impl/server/resource-json": {
+      "types": "./src/impl/server/resource-json.ts",
+      "default": "./dist/impl/server/resource-json.js"
+    },
+    "./impl/server/resource-memory": {
+      "types": "./src/impl/server/resource-memory.ts",
+      "default": "./dist/impl/server/resource-memory.js"
+    }
+  },
+  "author": "aawwaaa",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@types/node": "^26.0.0",
+    "@types/ws": "^8.18.1",
+    "ws": "^8.21.0"
+  }
+}
